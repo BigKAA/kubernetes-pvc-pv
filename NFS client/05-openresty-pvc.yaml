@@ -2,6 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: openresty-claim
+  namespace: volumes-sample
   annotations:
     volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"
 spec:
