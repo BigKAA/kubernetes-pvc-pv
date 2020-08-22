@@ -6,7 +6,7 @@ spec:
   accessModes:
   - ReadWriteOnce
   capacity:
-    storage: 10Gi
+    storage: 1Gi
   hostPath:
     path: /opt/pv/test-static
     type: DirectoryOrCreate
@@ -19,3 +19,4 @@ spec:
           values:
           - node3.kryukov.local
   persistentVolumeReclaimPolicy: Retain
+  # persistentVolumeReclaimPolicy: Delete
