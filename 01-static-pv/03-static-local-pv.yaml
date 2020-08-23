@@ -16,6 +16,6 @@ spec:
         - key: kubernetes.io/hostname
           operator: In
           values:
-          - node2.kryukov.local
+          # - node2.kryukov.local
           - node3.kryukov.local
   persistentVolumeReclaimPolicy: Retain

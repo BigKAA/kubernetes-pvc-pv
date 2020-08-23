@@ -39,8 +39,7 @@ spec:
         volumeMounts:
           - mountPath: /mnt/local
             name: claim-volume
-            # subPath: static
       volumes:
         - name: claim-volume
           persistentVolumeClaim:
-            claimName: test-local-pvc
+            claimName: claim-local-pvc

@@ -3,6 +3,7 @@ kind: PersistentVolume
 metadata:
   name: test-static
 spec:
+  # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
   accessModes:
   - ReadWriteOnce
   capacity:

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: openresty
+  name: openresty-nfs
   namespace: volumes-sample
   labels:
     app: openresty
@@ -37,9 +37,9 @@ spec:
           name: http
           protocol: TCP
         volumeMounts:
-          - mountPath: /mnt/static
+          - mountPath: /mnt/nfs
             name: claim-volume
       volumes:
         - name: claim-volume
           persistentVolumeClaim:
-            claimName: claim-static-pv
+            claimName: claim-nfs-pv

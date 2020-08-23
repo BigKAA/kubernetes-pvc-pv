@@ -4,12 +4,10 @@ metadata:
   name: claim-static-pv
   namespace: volumes-sample
 spec:
-  # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
-  # storageClassName: ""
   volumeName: test-static
 

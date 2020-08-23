@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: test-nfs
+spec:
+  accessModes:
+  - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  nfs:
+    path: /var/k8s/static-pv
+    server: 192.168.218.53
+  persistentVolumeReclaimPolicy: Retain
