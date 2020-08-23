@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: openresty-nfs
+  name: openresty
   namespace: volumes-sample
   labels:
     app: openresty
