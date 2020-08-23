@@ -37,14 +37,9 @@ spec:
               name: http
               protocol: TCP
           volumeMounts:
-            - name: index-html
-              mountPath: /usr/local/openresty/nginx/html/
             - name: pvc-sample
               mountPath: /var/log/nfs
       volumes:
-        - name: index-html
-          configMap:
-            name: index-html
         - name: pvc-sample
           persistentVolumeClaim:
             claimName: openresty-claim
