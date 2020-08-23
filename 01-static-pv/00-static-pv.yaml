@@ -7,6 +7,8 @@ spec:
   - ReadWriteOnce
   capacity:
     storage: 1Gi
+  # HostPath (только для тестирования одного узла - локальное хранилище не поддерживается
+  # и НЕ БУДЕТ РАБОТАТЬ в многоузловом кластере).
   hostPath:
     path: /opt/pv/test-static
     type: DirectoryOrCreate
