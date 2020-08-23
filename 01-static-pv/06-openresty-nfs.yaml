@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openresty
+  namespace: volumes-sample
+  labels:
+    app: openresty
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: openresty
+  template:
+    metadata:
+      labels:
+        app: openresty
+    spec:
+      containers:
+      - name: openresty
+        image: openresty/openresty:centos-rpm
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: NGINX_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        resources:
+          limits:
+            cpu: "0.2"
+            memory: "300Mi"
+          requests:
+            cpu: "0.1"
+            memory: "100Mi"
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        volumeMounts:
+          - mountPath: /mnt/nfs
+            name: claim-volume
+      volumes:
+        - name: claim-volume
+          persistentVolumeClaim:
+            claimName: claim-nfs-pv

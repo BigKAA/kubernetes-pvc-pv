@@ -29,11 +29,11 @@ spec:
             - name: PROVISIONER_NAME
               value: kryukov.local/nfs
             - name: NFS_SERVER
-              value: 10.10.10.60
+              value: 192.168.218.53
             - name: NFS_PATH
-              value: /ifs/kubernetes
+              value: /var/k8s/logs/auto-pv
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 10.10.10.60
-            path: /ifs/kubernetes
+            server: 192.168.218.53
+            path: /var/k8s/logs/auto-pv
