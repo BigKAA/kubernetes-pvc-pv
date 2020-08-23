@@ -1,4 +1,5 @@
 apiVersion: storage.k8s.io/v1
+# https://kubernetes.io/docs/concepts/storage/storage-classes/
 kind: StorageClass
 metadata:
   name: managed-nfs-storage
