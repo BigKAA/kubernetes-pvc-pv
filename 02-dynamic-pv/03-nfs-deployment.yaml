@@ -31,9 +31,9 @@ spec:
             - name: NFS_SERVER
               value: 192.168.218.53
             - name: NFS_PATH
-              value: /var/k8s/logs/pvs
+              value: /var/k8s/auto-pv
       volumes:
         - name: nfs-client-root
           nfs:
             server: 192.168.218.53
-            path: /var/k8s/logs/pvs
+            path: /var/k8s/auto-pv
